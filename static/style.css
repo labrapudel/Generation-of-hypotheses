@@ -1,0 +1,136 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #fff;
+    color: #000;
+    padding: 60px 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container { max-width: 1240px; width: 100%; }
+
+.title {
+    font-size: 56px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-size: 24px;
+    text-align: center;
+    color: #555;
+    margin-bottom: 80px;
+}
+
+.content {
+    display: flex;
+    gap: 100px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.description {
+    flex: 1;
+    min-width: 320px;
+    max-width: 580px;
+    background: #000;
+    color: #fff;
+    padding: 50px 60px;
+    font-size: 18px;
+    line-height: 1.7;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    box-shadow: 8px 8px 24px rgba(0,0,0,0.15);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 400px;
+    gap: 16px;
+}
+
+.input {
+    width: 100%;
+    padding: 18px 24px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #fdfdfd;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #000;
+}
+
+.file-input {
+    cursor: pointer;
+}
+
+.or {
+    font-size: 18px;
+    color: #888;
+    margin: 4px 0;
+}
+
+.generate-btn {
+    margin-top: 40px;
+    background: #fff;
+    color: #000;
+    border: 3px solid #000;
+    padding: 16px 80px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.generate-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+.results {
+    margin-top: 100px;
+    padding: 40px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.results h3 { font-size: 26px; margin-bottom: 20px; }
+.results ol { padding-left: 28px; }
+.results li { margin: 16px 0; font-size: 18px; }
+
+.footer {
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-between;
+    color: #888;
+    font-size: 14px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+@media (max-width: 940px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+    }
+    .form { width: 400px; }
+}
