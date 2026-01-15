@@ -1,26 +1,14 @@
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Text
-from sqlalchemy.orm import relationship
-from datetime import datetime
-from database import Base
+from database import db
 
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    password = db.Column(db.String(120), nullable=False)
 
-class User(Base):
-    __tablename__ = "users"
-
-    id = Column(Integer, primary_key=True)
-    email = Column(String, unique=True, index=True)
-    created_at = Column(DateTime, default=datetime.utcnow)
-
-    generations = relationship("Generation", back_populates="user")
-
-
-class Generation(Base):
-    __tablename__ = "generations"
-
-    id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey("users.id"))
-    source = Column(String)
-    hypotheses = Column(Text)  # строка, позже можно JSON
-    created_at = Column(DateTime, default=datetime.utcnow)
-
-    user = relationship("User", back_populates="generations")
+class Article(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(500), nullable=False)
+    abstract = db.Column(db.Text)
+    authors = db.Column(db.String(500))
+    pdf_url = db.Column(db.String(500))
+    source = db.Column(db.String(50))  # arxiv или openalex

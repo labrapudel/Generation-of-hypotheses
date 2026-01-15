@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Neurogenesis — Вход</title>
+  <title>Neurogenesis — Регистрация</title>
   <style>
     :root { --orange: #f47936; --gray-light: #e5e5e5; --gray-text: #a3a3a3; --font-main: "Inter", sans-serif; }
     body { margin:0; font-family:var(--font-main); background:#fff; display:flex; flex-direction:column; align-items:center; min-height:100vh; }
@@ -16,7 +16,7 @@
     label { font-size:14px; color:var(--gray-text); }
     input { height:44px; padding:0 12px; border-radius:10px; border:1px solid var(--gray-light); font-size:14px; }
     .btn-main { height:44px; border:none; border-radius:10px; background:linear-gradient(0deg,rgba(176,65,4,0.2),rgba(176,65,4,0.2)),linear-gradient(0deg,rgba(215,83,11,1),rgba(215,83,11,1)); color:#fff; font-size:16px; font-weight:500; cursor:pointer; }
-    .links { display:flex; justify-content:space-between; font-size:14px; }
+    .links { display:flex; justify-content:center; font-size:14px; }
     .links a { color:#d6520b; text-decoration:none; }
     footer { margin-top:auto; padding:40px 20px; font-size:14px; color:var(--orange); text-align:center; }
   </style>
@@ -39,19 +39,18 @@
   </header>
 
   <main>
-    <form class="card" method="post" action="/login">
+    <form class="card" method="post" action="/register">
       <div class="field">
         <label>Логин (username)</label>
         <input type="text" name="username" placeholder="введите логин" required />
       </div>
       <div class="field">
         <label>Пароль</label>
-        <input type="password" name="password" placeholder="Введите пароль" required />
+        <input type="password" name="password" placeholder="Придумайте пароль" required />
       </div>
-      <button class="btn-main" type="submit">Войти</button>
+      <button class="btn-main" type="submit">Зарегистрироваться</button>
       <div class="links">
-        <a href="#">Забыли пароль?</a>
-        <a href="/register">Регистрация</a>
+        <a href="/login">Уже есть аккаунт? Войти</a>
       </div>
     </form>
   </main>
